@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="86px" height="86px" viewBox="0 0 86 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="kela-symbol" transform="translate(-19, -19)" fill="#181825">
+            <path d="M32,72 L61.9649113,71.9999397 L62.2799048,71.9961582 C67.6733292,71.8479317 72,67.4292399 72,62 L71.999,61.93 L72,32 L92,32 L92,92 L32,92 L32,72 Z M68,53.9990875 C66.3284802,52.7438185 64.2511041,52 62,52 C56.4771525,52 52,56.4771525 52,62 C52,64.2511041 52.7438185,66.3284802 53.9990875,68 L32,68 L32,32 L68,32 L68,53.9990875 Z" id="Shape" transform="translate(62, 62) rotate(45) translate(-62, -62)"></path>
+        </g>
+    </g>
+</svg>
