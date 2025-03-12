@@ -156,9 +156,9 @@ p {
 .scene {
   width: 400px;
   height: 400px;
-  perspective: 1800px;
+  perspective: 2000px;
   position: fixed;
-  lefT: 0;
+  left: 0;
   right: 0;
   margin: auto;
   top: calc(50% - 200px);
@@ -166,7 +166,12 @@ p {
   mix-blend-mode: difference;
   transition: all 1s cubic-bezier(.5,0,.2,1);
   pointer-events: none;
-  opacity:0.6
+  opacity:0.6;
+  animation-name:enter;
+  animation-duration: 2s;
+}
+@keyframes enter {
+  0% { transform:scale(0.5); opacity:0; }
 }
 .viewing-page .scene {
   perspective: 800px;
@@ -280,9 +285,9 @@ a.logo:hover {
   opacity:0.9
 }
 section.hero {
-  padding-top:60px
+  padding-top:44px
 }
-.text p:after {
+.text p span.typed:last-of-type:after {
   display: inline-block;
   content:" ";
   width:6px;
@@ -296,8 +301,7 @@ section.hero {
 }
 @keyframes curret {
   0% { opacity:1}
-  10% { opacity:0 }
-  20% { opacity:1}
+  50% { opacity:0 }
   100% { opacity:1}
 }
 .vc-logo {
@@ -537,38 +541,41 @@ $(document).click(function(event) {
   }        
 });
 
-let h1 = document.querySelector('h1');
-let text = h1.textContent;
-h1.textContent = '';
-let i = 0;
-let speed = 30;
-
-function typeWriter() {
-  if (i < text.length) {
-    h1.textContent += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
+function typeWriter(element, text, speed) {
+  element.textContent = '';
+  
+  // Create spans for each character
+  for (let i = 0; i < text.length; i++) {
+    const charSpan = document.createElement('span');
+    charSpan.textContent = text.charAt(i);
+    charSpan.style.opacity = '0';
+    element.appendChild(charSpan);
   }
-}
-
-typeWriter();
-
-let textParagraphs = document.querySelectorAll('.text p');
-textParagraphs.forEach(paragraph => {
-  let paragraphText = paragraph.textContent;
-  paragraph.textContent = '';
-  let j = 0;
-  let paragraphSpeed = 10;
-
-  function paragraphTypeWriter() {
-    if (j < paragraphText.length) {
-      paragraph.textContent += paragraphText.charAt(j);
-      j++;
-      setTimeout(paragraphTypeWriter, paragraphSpeed);
+  
+  // Fade in characters one by one
+  const spans = element.querySelectorAll('span');
+  let i = 0;
+  
+  function fadeIn() {
+    if (i < spans.length) {
+      spans[i].style.opacity = '1';
+      $(spans[i]).addClass('typed')
+      i++;
+      setTimeout(fadeIn, speed);
     }
   }
+  
+  fadeIn();
+}
 
-  paragraphTypeWriter();
+// Type the h1 heading
+let h1 = document.querySelector('h1');
+typeWriter(h1, h1.textContent, 30);
+
+// Type all paragraphs in elements with class 'text'
+let textParagraphs = document.querySelectorAll('.text p');
+textParagraphs.forEach(paragraph => {
+  typeWriter(paragraph, paragraph.textContent, 10);
 });
 
 document.addEventListener('mousemove', (e) => {
