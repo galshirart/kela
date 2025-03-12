@@ -503,6 +503,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function nav() {
   hash = window.location.hash.substring(1)
   $('body').removeClass('viewing-page')
+  window.scrollTo({top: 0, behavior: 'auto'})
   $('.page').removeClass('show');
 
   if (hash != '') {
