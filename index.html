@@ -62,7 +62,7 @@ section {
 h1 {
   font-size:94px;
   letter-spacing: 2px;
-  line-height:90%;
+  line-height:100%;
   font-weight: 400;
   text-transform: uppercase;
   max-width:1000px;
@@ -110,6 +110,10 @@ a.link:hover {
 ::-moz-selection {
   background: #00E6FF;
   color:#181825
+}
+p {
+  font-size:12px;
+  max-width:700px;
 }
 .button {
   color:#00E6FF;
@@ -195,13 +199,15 @@ a.link:hover {
   100% { transform: rotateY(405deg); }
 }
 .header {
-  position: relative;
-  top:-4px;
+  height:60px;
+  width:100%;
+  padding:20px;
+  border-bottom: 0.5px solid #F1F0EE20;
+  position: absolute;
 }
 a.logo img {
   height:28px;
   position: relative;
-  left:-6px;
   cursor: pointer;
 }
 a.logo:hover {
@@ -214,12 +220,12 @@ a.logo:hover {
   opacity: 0;
 }
 .kebab {
-  font-size:16px;
-  letter-spacing: -1px;
+  font-size:20px;
+  letter-spacing: -2px;
   cursor: pointer;
-  padding:4px 8px;
+  padding:12px;
   position: relative;
-  right:-8px;
+  right:-10px;
 }
 .kebab:hover {
   color:#00E6FF
@@ -230,7 +236,7 @@ a.logo:hover {
 .menu {
   position: absolute;
   z-index: 250;
-  top: 60px;
+  top: 59px;
   right: 0;
   background: #181825;
   width: 200px;
@@ -246,7 +252,7 @@ a.logo:hover {
 }
 .menu > * {
   display: block;
-  padding: 12px 16px;
+  padding: 14px 16px;
   border:0.5px solid #F1F0EE20;
 }
 .menu a:hover {
@@ -273,9 +279,8 @@ a.logo:hover {
   filter:invert();
   opacity:0.9
 }
-p {
-  font-size:12px;
-  max-width:700px;
+section.hero {
+  padding-top:60px
 }
 .text p:after {
   display: inline-block;
@@ -372,10 +377,19 @@ iframe {
     opacity:0.5;
     top:200px;
   }
+  .blue-circle {
+    display: none;
+  }
 }
 </style>
 </head>
 <body>
+
+<div class="header flex">
+  <a class="logo" onclick="closePage()"><img src="img/kela-logo.svg"></a>
+  <div class="grey position">050 /// 050</div>
+  <div class="kebab" onclick="openMenu()">•••</div>
+</div>
 
 <div class="scene">
   <div class="cube">
@@ -389,11 +403,6 @@ iframe {
 </div>
 
 <section class="hero">
-  <div class="header flex">
-    <a class="logo" onclick="closePage()"><img src="img/kela-logo.svg"></a>
-    <div class="grey position">50 /// 50</div>
-    <div class="kebab" onclick="openMenu()">•••</div>
-  </div>
   <h1>Battle-tested tech for modern warfare</h1>
 </section>
 
@@ -492,6 +501,7 @@ function nav() {
 
   if (hash != '') {
     $('body').addClass('viewing-page')
+    window.scrollTo(0, 0)
     $('.page.'+hash).addClass('show')
   }
 }
