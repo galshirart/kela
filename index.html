@@ -206,7 +206,8 @@ a.link:hover {
   width:100%;
   padding:20px;
   border-bottom: 0.5px solid #F1F0EE20;
-  position: absolute;
+  position: fixed;
+  background:#181825
 }
 a.logo img {
   height:28px;
@@ -503,12 +504,10 @@ document.addEventListener('DOMContentLoaded', function() {
 function nav() {
   hash = window.location.hash.substring(1)
   $('body').removeClass('viewing-page')
-  window.scrollTop(0)
   $('.page').removeClass('show');
 
   if (hash != '') {
     $('body').addClass('viewing-page')
-    window.scrollTop(0)
     $('.page.'+hash).addClass('show')
   }
 }
