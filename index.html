@@ -503,12 +503,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function nav() {
   hash = window.location.hash.substring(1)
   $('body').removeClass('viewing-page')
-  $('html').scrollTop(0)
+  window.scrollTop(0)
   $('.page').removeClass('show');
 
   if (hash != '') {
     $('body').addClass('viewing-page')
-    $('html').scrollTop(0)
+    window.scrollTop(0)
     $('.page.'+hash).addClass('show')
   }
 }
