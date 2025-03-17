@@ -76,6 +76,15 @@ h2 {
   margin-bottom:32px;
   line-height:100%
 }
+h3 {
+  font-size:32px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top:32px;
+  margin-bottom:20px;
+  line-height:120%;
+  max-width:780px;
+}
 p {
   margin:0;
   margin-bottom:10px;
@@ -358,6 +367,25 @@ iframe {
   border: 0;
   height: calc(100% - 60px);
 }
+.block.news {
+  margin-bottom:24px;
+}
+.block.news .flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+}
+.block.news .image {
+  width:320px;
+  margin-right:32px;
+  aspect-ratio: 1.7;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin-top: 38px;
+}
+.block.news p {
+  margin-bottom:16px;
+}
 @media screen and (max-width: 800px) {
   h1 {
     font-size:60px;
@@ -384,6 +412,12 @@ iframe {
   }
   .blue-circle {
     display: none;
+  }
+  .block.news .flex {
+    display: block;
+  }
+  .block.news .image {
+    width:100%
   }
 }
 </style>
@@ -452,7 +486,42 @@ iframe {
 <div class="page newsroom">
   <h2>NEWSROOM</h2>
 
-  <p>COMING SOON</p>
+  <div class="block news">
+    <div class="flex">
+      <div class="image" style="background-image:url('https://pbs.twimg.com/media/GmPbaqjWcAEytE6?format=jpg&name=4096x4096')"></div>
+      <div>
+        <h3>Silicon Valley Invests in Israeli Startups in Bid for U.S. Defense Market</h3>
+        <p class="grey">WSJ / MARCH 16, 2025</p>
+        <p>CIA's venture-capital arm is among the investors in Kela, a firm where 'techno-warriors' aim to sell directly to the Pentagon</p>
+        <a class="button" href="https://www.wsj.com/politics/national-security/silicon-valley-invests-in-israeli-startups-in-bid-for-u-s-defense-market-09d47bb4?mod=e2tw" target="_blank">READ MORE</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="block news">
+    <div class="flex">
+      <div class="image" style="background-image:url('https://www.sequoiacap.com/wp-content/uploads/sites/6/2025/03/Blog-Post_Kela.jpg')"></div>
+      <div>
+        <h3>Partnering with Kela: Modern Defense for Israel and Western Allies</h3>
+        <p class="grey">SEQUOIA / MARCH 17, 2025</p>
+        <p>Four veterans of elite intelligence units, including the former General Manager of Palantir Israel, are building an innovative new defense prime, starting with border protection. Their vision is to leverage Israel’s unique cadre of “technowarriors” to help defend the Western world order.</p>
+        <a class="button" href="https://www.sequoiacap.com/article/partnering-with-kela-modern-defense-for-israel-and-western-allies/" target="_blank">READ MORE</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="block news">
+    <div class="flex">
+      <div class="image" style="background-image:url('media/kela-banner-2.png')"></div>
+      <div>
+        <h3>Partnering with Kela: Modern Defense for Israel and Western Allies</h3>
+        <p class="grey">LUX / MARCH 17, 2025</p>
+        <p>The most transformative technologies emerge from the intersection of necessity and ingenuity—where the stakes are high, and the drive to innovate is unrelenting. This is evident in the history of defense tech founders, who turn necessity into invention and constraints into capabilities. These innovators have transformed the crucible of conflict into protection and progress.</p>
+        <a class="button" href="https://www.luxcapital.com/news/the-technowarrior-revolution-our-investment-in-kela-technologies" target="_blank">READ MORE</a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div class="page positions">
