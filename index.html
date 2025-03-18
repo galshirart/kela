@@ -576,6 +576,11 @@ function nav() {
   $('body').removeClass('viewing-page')
   $('.page').removeClass('show');
 
+  if (hash == 'positions') {
+    window.location.href = 'https://www.comeet.com/jobs/kelasys/2A.007';
+    return;
+  }
+
   if (hash != '') {
     $('body').addClass('viewing-page')
     $('.page.'+hash).addClass('show')
